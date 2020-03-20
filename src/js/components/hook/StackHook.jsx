@@ -7,7 +7,8 @@ function Example() {
   useEffect(() => {
     document.title = `clicked ${count}`;
   });
-/* reducer 的使用 */ 
+
+/* reducer 的使用 */
   const inital = {number : 0};
   function reducer(state, action){
     switch (action.type){
@@ -19,7 +20,9 @@ function Example() {
         throw new Error();
     }
   }
+
   const [state, dispatch] = useReducer(reducer, inital);
+  
   return (
     <div>
       <p>You clicked {count} times</p>
