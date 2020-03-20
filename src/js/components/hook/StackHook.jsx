@@ -20,9 +20,9 @@ function Example() {
         throw new Error();
     }
   }
-
+/* useReducer 无闭包问题，可替代useState场景  */
   const [state, dispatch] = useReducer(reducer, inital);
-  
+
   return (
     <div>
       <p>You clicked {count} times</p>
