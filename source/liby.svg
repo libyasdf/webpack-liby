@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="100" cy="50" r="40" stroke="black"
+stroke-width="2" fill="red"/>
+<rect x="20" y="20" rx="200" ry="30" width="250" height="250"
+style="fill:blue;stroke:pink;stroke-width:5;
+fill-opacity:0.1;stroke-opacity:0.5;"/>
+
+<ellipse cx="300" cy="300" rx="100" ry="50"
+style="fill:lime;
+stroke:#242424;
+stroke-width:20" />
+
+<line x1="400" y1="400" x2="500" y2="500"
+style="stroke:yellow;
+stroke-width:10" />
+
+<polygon points="220,100 300,210 170,250 123,234"
+style="fill:#555555;
+stroke:#000000;
+stroke-width:10" />
+
+<polyline  points="0,0 0,20 20,20 20,40 40,40 40,60"
+style="fill:white;stroke:red;stoke-width:2;
+filter:url(#Gaussian_Blur)" 
+/>
+<!-- 当链接滤镜 id 时，必须使用 # 字符 -->
+<path d="M153 334
+C153 334 151 334 151 334
+C151 339 153 344 156 344
+C164 344 171 339 171 334
+C171 322 164 314 156 314
+C142 314 131 322 131 334
+C131 350 142 364 156 364
+C175 364 191 350 191 334
+C191 311 175 294 156 294
+C131 294 111 311 111 334
+C111 361 131 384 156 384
+C186 384 211 361 211 334
+C211 300 186 274 156 274"
+style="fill:white;stroke:red;stroke-width:2;
+filter:url(#Gaussian_Blur)" />
+<path d="M250 150 L150 350 L350 350 Z" />
+
+<defs>
+    <filter id="Gaussian_Blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+    </filter>
+</defs>
+<!-- 滤镜效果是通过 <feGaussianBlur> 标签进行定义的。
+fe 后缀可用于所有的滤镜
+<feGaussianBlur> 标签的 stdDeviation 属性可定义模糊的程度
+in="SourceGraphic" 这个部分定义了由整个图像创建效果
+ -->
+ <defs>
+    <linearGradient id="o_r" x1="100%" y1="100%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:red;
+                stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:green;
+                stop-opacity:1"/>
+    </linearGradient>
+</defs>
+
+<ellipse cx="400" cy="190" rx="85" ry="55"
+style="fill:url(#o_r)"/>
+<!-- 放射性渐变 -->
+<defs>
+    <radialGradient id="grey_blue" cx="50%" cy="50%" r="50%"
+    fx="50%" fy="50%">
+    <stop offset="0%" style="stop-color:rgb(200,200,200);
+    stop-opacity:0"/>
+    <stop offset="100%" style="stop-color:rgb(0,0,255);
+    stop-opacity:1"/>
+    </radialGradient>
+</defs>
+
+<ellipse cx="630" cy="400" rx="110" ry="100"
+style="fill:url(#grey_blue)"/>
+
+<defs>
+<radialGradient id="grey_blue" cx="20%" cy="40%" r="50%"
+fx="50%" fy="50%">
+<stop offset="0%" style="stop-color:rgb(200,200,200);
+stop-opacity:0"/>
+<stop offset="100%" style="stop-color:rgb(0,0,255);
+stop-opacity:1"/>
+</radialGradient>
+</defs>
+
+<ellipse cx="630" cy="600" rx="110" ry="100"
+style="fill:url(#grey_blue)"/>
+
+
+</svg>
+<!-- CSS 的 stroke-width 属性定义矩形边框的宽度
+     CSS 的 stroke 属性定义矩形边框的颜色 -->
+<!-- opacity 属性定义整个元素的透明值（合法的范围是：0 - 1） -->
+<!-- CSS 的 fill-opacity 属性定义填充颜色透明度（合法的范围是：0 - 1） -->
+<!-- CSS 的 stroke-opacity 属性定义笔触颜色的透明度（合法的范围是：0 - 1） -->
+<!-- rx 和 ry 属性可使矩形产生圆角 -->
+
+<!-- line -->
+<!-- x1 属性在 x 轴定义线条的开始
+y1 属性在 y 轴定义线条的开始
+x2 属性在 x 轴定义线条的结束
+y2 属性在 y 轴定义线条的结束 -->
+
+<!-- path -->
+<!-- 
+    M = moveto
+    L = lineto
+    H = horizontal lineto
+    V = vertical lineto
+    C = curveto
+    S = smooth curveto
+    Q = quadratic Belzier curve
+    T = smooth quadratic Belzier curveto
+    A = elliptical Arc
+    Z = closepath
+     大写表示绝对定位，小写表示相对定位 -->
+
+<!-- 必须在 <defs> 标签中定义 SVG 滤镜。 -->
