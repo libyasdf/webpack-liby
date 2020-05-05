@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname,'dist'),
     filename: 'liby.bundle.js'
   },
-  module: {
+  module: { //第三方模块
     rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
@@ -24,20 +24,20 @@ module.exports = {
         }]
       },{
         test: /\.jsx$/,
-        exclude: /^node_modules$/,
+        exclude: /^node_modules$/,//过滤node_modules目录
         use: [{
           loader: "babel-loader"
         }],
-        include: [APP_PATH]
+        include: [APP_PATH]// 只匹配
       },  {
         test:/\.css$/,
         use:["style-loader","css-loader"]//注意：loader是从又往左开始加载处理的，所以先执行css-loader
       },{
         test: /.less$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'less-loader'
+          'style-loader',//将css以<style>标签插入至dom中
+          'css-loader',//解释css文件内的 @import 和 url()
+          'less-loader'//一个模块文件需要转化多次，需要多个loader——自下而上
         ]
       }
     ]
